@@ -3,10 +3,10 @@ name = "warbler_grass"
 version = "0.6.1"
 edition = "2021"
 readme = "README.md"
-license = "MIT OR Apache-2.0"
+license = "MIT"
 exclude = ["scripts/", "./assets/", "branding"]
 keywords = ["bevy", "gamedev", "graphics", "grass", "rendering"]
-repository = "https://github.com/EmiOnGit/warbler_grass"
+repository = "https://github.com/ka-de/warbler_grass"
 description = "A bevy plugin for creating 3d grass in your game"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -15,20 +15,34 @@ description = "A bevy plugin for creating 3d grass in your game"
 [dependencies]
 bytemuck = "1.13.0"
 bitflags = "2"
-image = "0.24.9" # needs to be in sync with the version used by bevy
+image = "0.24.9"    # needs to be in sync with the version used by bevy
 [dependencies.bevy]
-version = "0.13"
+version = "0.13.2"
 default-features = false
-features = [ "bevy_core_pipeline", "bevy_render", "bevy_asset", "bevy_pbr" , "png", "multi-threaded"]
+features = [
+  "bevy_core_pipeline",
+  "bevy_render",
+  "bevy_asset",
+  "bevy_pbr",
+  "png",
+  "multi-threaded",
+]
 
 [dev-dependencies]
-bevy = { version = "0.13", default-features = false, features = ["bevy_winit","x11", "ktx2", "zstd", "tonemapping_luts", "multi-threaded"] }
+bevy = { version = "0.13.2", default-features = false, features = [
+  "bevy_winit",
+  "x11",
+  "ktx2",
+  "zstd",
+  "tonemapping_luts",
+  "multi-threaded",
+] }
 
 
 [[example]]
 name = "load_grass"
 path = "examples/load_grass.rs"
-required-features = ["bevy/bevy_winit","bevy/x11"]
+required-features = ["bevy/bevy_winit", "bevy/x11"]
 
 [[example]]
 name = "many_chunks"
